@@ -2,6 +2,8 @@
 Designed as a live coding problem.
 
 
+###**Problem Description**
+---
 Pretend we have a series of N lights on the wall, each with their own switch.
 When you turn on the switch for one of the lights, it flips the 
 switch for all lights to the right of the one you flipped. Meaning, any lights that were
@@ -26,3 +28,13 @@ Hit Switch 3:
 [1, 1, 1, 1]
 
 Result: 4 Presses
+
+
+###Testing Class Usage
+---
+The Testing class has two constructors, a default and an overload that takes a randomness seed, and the number of tests, and the maximum number of switches. 
+It has two functions, RunForPassed and RunWithDetails.
+
+RunForPassed will show expected results, actual results and display passed or failed.
+RunWithDetails will display the actual switches themselves, and your result for each test case.
+
