@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TechInterview.Practice.Demo
+namespace TechInterview.Practice.Demos.BulbsDemo
 {
-    class TestAnswer
+    class TestBulbs
     {
         List<List<int>> bulbs = new List<List<int>>();
         int randomSeed, numberOfTests, maxListSize;
@@ -30,19 +30,6 @@ namespace TechInterview.Practice.Demo
             }
             Console.WriteLine();
         }
-        private int CountSwitchesSolution(List<int> argument)
-        {
-            int count = 0, find = 0;
-            for (int i = 0; i < argument.Count; i++)
-            {
-                if (argument[i] == find)
-                {
-                    count++;
-                    find = 1 - find;
-                }
-            }
-            return count;
-        }
         public void RunWithDetails()
         {
             for (int j = 0; j < numberOfTests; j++)
@@ -64,8 +51,21 @@ namespace TechInterview.Practice.Demo
             }
             Console.WriteLine();
         }
+        private int CountSwitchesSolution(List<int> argument)
+        {
+            int count = 0, find = 0;
+            for (int i = 0; i < argument.Count; i++)
+            {
+                if (argument[i] == find)
+                {
+                    count++;
+                    find = 1 - find;
+                }
+            }
+            return count;
+        }
 
-        public TestAnswer(int randomSeed, int numberOfTests, int maxListSize)
+        public TestBulbs(int randomSeed, int numberOfTests, int maxListSize)
         {
             this.randomSeed = randomSeed;
             this.numberOfTests = numberOfTests;
@@ -73,7 +73,7 @@ namespace TechInterview.Practice.Demo
             rand = new Random(randomSeed);
         }
 
-        public TestAnswer()
+        public TestBulbs()
         {
             randomSeed = 1;
             numberOfTests = 10;
