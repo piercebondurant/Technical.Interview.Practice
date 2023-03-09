@@ -3,7 +3,7 @@
 Designed as a live coding problem.
 
 
-###Problem Description
+### Problem Description
 ---
 Pretend we have a series of N lights on the wall, each with their own switch.
 When you turn on the switch for one of the lights, it flips the 
@@ -31,7 +31,7 @@ Hit Switch 3:
 Result: 4 Presses
 
 
-###Testing Class Usage
+### Testing Class Usage
 ---
 The Testing class has two constructors, a default and an overload that takes a randomness seed, and the number of tests, and the maximum number of switches. 
 It has two functions, RunForPassed and RunWithDetails.
