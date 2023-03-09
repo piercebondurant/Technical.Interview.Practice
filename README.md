@@ -3,7 +3,7 @@
 Designed as a live coding problem.
 
 
-###**Problem Description**
+###Problem Description
 ---
 Pretend we have a series of N lights on the wall, each with their own switch.
 When you turn on the switch for one of the lights, it flips the 
