@@ -14,7 +14,7 @@ namespace TechInterview.Practice.Demo
             for (int j = 0; j < numberOfTests; j++)
             {
                 bulbs.Add(new List<int>());
-                int length = rand.Next(maxListSize) + 3;
+                int length = rand.Next(maxListSize);
                 for (int i = 0; i < length; i++)
                 {
                     bulbs[j].Add(rand.Next(2));
@@ -28,6 +28,7 @@ namespace TechInterview.Practice.Demo
                 bool passed = expected == actual;
                 Console.WriteLine($"\t{expected}\t|\t{actual}\t|\t{passed}");
             }
+            Console.WriteLine();
         }
         private int CountSwitchesSolution(List<int> argument)
         {
@@ -48,7 +49,7 @@ namespace TechInterview.Practice.Demo
             {
                 Console.Write($"Test{j + 1}: [");
                 bulbs.Add(new List<int>());
-                int length = rand.Next(maxListSize) + 3;
+                int length = rand.Next(maxListSize);
                 for (int i = 0; i < length; i++)
                 {
                     bulbs[j].Add(rand.Next(2));
@@ -56,10 +57,12 @@ namespace TechInterview.Practice.Demo
                 }
                 Console.WriteLine(bulbs[j][bulbs[j].Count - 1] + "]");
             }
+            Console.WriteLine();
             for (int i = 0; i < bulbs.Count; i++)
             {
-                Console.WriteLine($"Test{i} Presses: {Program.CountSwitches(bulbs[i])}");
+                Console.WriteLine($"Test{i + 1} Presses: {Program.CountSwitches(bulbs[i])}");
             }
+            Console.WriteLine();
         }
 
         public TestAnswer(int randomSeed, int numberOfTests, int maxListSize)

@@ -7,7 +7,6 @@ namespace TechInterview.Practice
     {
 
         /*
-        
         Pretend we have a series of N lights on the wall, each with their own switch.
         When you turn on the switch for one of the lights, it flips the 
         switch for all lights to the right of the one you flipped. Meaning, any lights that were
@@ -40,8 +39,8 @@ namespace TechInterview.Practice
         static void Main(string[] args)
         {
             new TestAnswer().RunForPassed();
-            new TestAnswer(15, 5, 5).RunForPassed();
-            //new TestAnswer().RunWithDetails();
+            //new TestAnswer(15, 5, 5).RunForPassed();
+            new TestAnswer().RunWithDetails();
             //new TestAnswer(15, 5, 5).RunWithDetails();
         }
     }
