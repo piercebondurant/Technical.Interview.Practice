@@ -1,4 +1,4 @@
-# Switches (Bulbs) Technical Interview Practice.
+# Technical Interview Practice.
 ---
 Designed as a live coding problem.
 
