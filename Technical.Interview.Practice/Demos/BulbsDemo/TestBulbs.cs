@@ -6,9 +6,9 @@ namespace TechInterview.Practice.Demos.BulbsDemo
 {
     class TestBulbs
     {
-        List<List<int>> bulbs = new List<List<int>>();
-        int randomSeed, numberOfTests, maxListSize;
-        Random rand;
+        private List<List<int>> bulbs = new List<List<int>>();
+        private int randomSeed, numberOfTests, maxListSize;
+        private Random rand;
         public void RunForPassed()
         {
             for (int j = 0; j < numberOfTests; j++)
