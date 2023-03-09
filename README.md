@@ -12,7 +12,7 @@ on previously are now off, and any lights that were off previously are now on.
 
 Your goal is to write a function to determine how many times you need to flip a switch in order to 
 turn on all of the lights, and return that value.
-
+```
 Example 1:           Example 2:
 [0, 1, 0, 1]         [0, 0, 1, 1]        
 
@@ -29,7 +29,7 @@ Hit Switch 3:
 [1, 1, 1, 1]
 
 Result: 4 Presses
-
+```
 
 ### Testing Class Usage
 ---
