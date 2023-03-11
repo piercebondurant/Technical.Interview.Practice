@@ -4,7 +4,8 @@ using TechInterview.Practice.Demos;
 namespace TechInterview.Practice
 {
     class Program
-    {   public static int CountSwitches(List<int> argument)
+    {   
+        public static int CountSwitches(List<int> argument)
         {
             return 0;
         }

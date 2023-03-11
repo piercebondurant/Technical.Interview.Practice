@@ -43,7 +43,10 @@ namespace TechInterview.Practice.Demos.MaxProductDemo
             }
             Console.WriteLine();
             
-            
+            for(int i = 0; i < numOfTests; i++)
+            {
+                Console.WriteLine($"Test{i+1}: {Program.MaxProductOfThree(maxProductList[i])}");
+            }
         }
         private int MPTSolution(List<int> argument)
         {
