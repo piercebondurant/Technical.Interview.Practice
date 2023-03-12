@@ -1,0 +1,40 @@
+﻿In this problem, you will be tasked with writing a function that returns the maximum product of three values in a list of ints.
+
+Insert the following function signature in the class Program in Program.cs
+
+public static int MaxProductOfThree(List<int> argument)
+{
+	return 0;
+}
+
+You may not modify the function signature including the return type or its parameters, but you are free to make any changes
+to the body of the funciton. 
+
+TestMaxProduct has two constructors, a default and an overload.
+
+The default will use the default parameters of a random seed of 1, a list size of 10, a range of 40, an offset of 20, and 10 test cases.
+
+The overload will take a random seed, a list size, a range of numbers, and a number of test cases to try, in that order.
+
+The formula to calculate the range of numbers your function will be run against is to take the range minus the offset.
+
+Meaning a range of 40, and an offset of 20 will produce numbers in your tests between -20 and 20.
+
+The size of the list will be at least 3. If a list size is passed to the overloaded constructor that is less than 3, it will default to 3.
+
+The offset will be half of the range, such that a range of 40 will produce random numbers between -20 and 20. 
+
+You can use either function from the TestMaxProduct class, RunForPassed(), or RunWithDetails()
+
+RunForPassed() will provide you with the expected result, actual result, and whether or not your implementation passed.
+True will represent passed, and false will represent a failure for any given test case.
+
+RunWithDetails() will provide you the arrays used in testing, as well as your actual result for each test case.
+
+Here are examples of each being called in the main.
+
+new Demos.MaxProductDemo.TestMaxProduct().RunForPassed();
+new Demos.MaxProductDemo.TestMaxProduct().RunWithDetails();
+new Demos.MaxProductDemo.TestMaxProduct(2, 5, 20, 5).RunForPassed();
+new Demos.MaxProductDemo.TestMaxProduct(1, 5, 20, 50).RunWithDetails();
+

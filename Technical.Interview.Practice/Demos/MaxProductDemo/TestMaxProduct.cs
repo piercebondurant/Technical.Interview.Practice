@@ -13,19 +13,19 @@ namespace TechInterview.Practice.Demos.MaxProductDemo
         {
             seed = 1;
             listSize = 10;
-            range = 41;
+            range = 40;
             offset = 20;
             numOfTests = 10;
             rand = new RandomMaxProductList(seed, range, offset);
         }
-        public TestMaxProduct(int seed, int listSize, int range, int offset, int numOfTests)
+        public TestMaxProduct(int seed, int listSize, int range, int numOfTests)
         {
             this.seed = seed;
-            this.listSize = listSize;
+            this.listSize = listSize > 2 ? listSize : 3;
             this.range = range + 1;
-            this.offset = this.range - offset <= -5 ? offset : range / -2;
+            this.offset = range / 2;
             this.numOfTests = numOfTests;
-            rand = new RandomMaxProductList(seed, range, offset);
+            rand = new RandomMaxProductList(this.seed, this.range, this.offset);
         }
 
         public void RunWithDetails()
@@ -39,13 +39,27 @@ namespace TechInterview.Practice.Demos.MaxProductDemo
                 {
                     Console.Write($"{maxProductList[i][j]}, ");
                 }
-                Console.WriteLine($"{maxProductList[i][maxProductList.Count - 1]}]");
+                Console.WriteLine($"{maxProductList[i][maxProductList[i].Count - 1]}]");
             }
             Console.WriteLine();
             
             for(int i = 0; i < numOfTests; i++)
             {
                 Console.WriteLine($"Test{i+1}: {Program.MaxProductOfThree(maxProductList[i])}");
+            }
+        }
+
+        public void RunForPassed()
+        {
+            maxProductList = new List<List<int>>();
+            Console.WriteLine($"    Expected\t|    Actual\t|    Result\n----------------|---------------|----------------");
+            for (int i = 0; i < numOfTests; i++)
+            {
+                maxProductList.Add(rand.GenerateList(listSize));
+                int expected = MPTSolution(maxProductList[i]);
+                int actual = Program.MaxProductOfThree(maxProductList[i]);
+                bool passed = expected == actual;
+                Console.WriteLine($"\t{expected}\t|\t{actual}\t|\t{passed}");
             }
         }
         private int MPTSolution(List<int> argument)
