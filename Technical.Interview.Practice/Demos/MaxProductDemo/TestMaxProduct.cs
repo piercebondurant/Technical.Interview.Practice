@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TechInterview.Practice.Demos.Tools;
 
 namespace TechInterview.Practice.Demos.MaxProductDemo
 {
@@ -8,24 +9,24 @@ namespace TechInterview.Practice.Demos.MaxProductDemo
     {
         int seed, range, listSize, offset, numOfTests;
         List<List<int>> maxProductList;
-        RandomMaxProductList rand;
+        RandomListGenerator rand;
         public TestMaxProduct()
         {
             seed = 1;
             listSize = 10;
-            range = 40;
+            range = 41;
             offset = 20;
             numOfTests = 10;
-            rand = new RandomMaxProductList(seed, range, offset);
+            rand = new RandomListGenerator(seed, range, offset);
         }
         public TestMaxProduct(int seed, int listSize, int range, int numOfTests)
         {
             this.seed = seed;
             this.listSize = listSize > 2 ? listSize : 3;
-            this.range = range + 1;
-            this.offset = range / 2;
+            this.range = range * 2 + 1;
+            this.offset = this.range / 2;
             this.numOfTests = numOfTests;
-            rand = new RandomMaxProductList(this.seed, this.range, this.offset);
+            rand = new RandomListGenerator(this.seed, this.range, this.offset);
         }
 
         public void RunWithDetails()
