@@ -17,7 +17,8 @@ namespace TechInterview.Practice
 
         static void Main(string[] args)
         {
-
+            //new TestBulbs(1, 50000, 20).RunForPassed();
+            new TestBulbs(1, 50000, 20).RunWithDetails();
 
         }
     }

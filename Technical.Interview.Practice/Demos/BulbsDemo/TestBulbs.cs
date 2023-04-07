@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TechInterview.Practice.Demos.Tools;
 
 namespace TechInterview.Practice.Demos.BulbsDemo
 {
@@ -9,16 +10,16 @@ namespace TechInterview.Practice.Demos.BulbsDemo
         private List<List<int>> bulbs = new List<List<int>>();
         private int randomSeed, numberOfTests, maxListSize;
         private Random rand;
+        private RandomListGenerator randomList;
         public void RunForPassed()
         {
             for (int j = 0; j < numberOfTests; j++)
             {
-                bulbs.Add(new List<int>());
+                
                 int length = rand.Next(maxListSize);
-                for (int i = 0; i < length; i++)
-                {
-                    bulbs[j].Add(rand.Next(2));
-                }
+                length = length > 0 ? length : length + 3;
+                bulbs.Add(randomList.GenerateList(length));
+                
             }
             Console.WriteLine($"    Expected\t|    Actual\t|    Result\n----------------|---------------|----------------");
             for (int i = 0; i < bulbs.Count; i++)
@@ -35,11 +36,12 @@ namespace TechInterview.Practice.Demos.BulbsDemo
             for (int j = 0; j < numberOfTests; j++)
             {
                 Console.Write($"Test{j + 1}: [");
-                bulbs.Add(new List<int>());
                 int length = rand.Next(maxListSize);
+                length = length > 0 ? length : length + 3;
+                bulbs.Add(randomList.GenerateList(length));
                 for (int i = 0; i < length; i++)
                 {
-                    bulbs[j].Add(rand.Next(2));
+                    //bulbs[j].Add(rand.Next(2));
                     Console.Write(bulbs[j][i] + ", ");
                 }
                 Console.WriteLine(bulbs[j][bulbs[j].Count - 1] + "]");
@@ -71,6 +73,7 @@ namespace TechInterview.Practice.Demos.BulbsDemo
             this.numberOfTests = numberOfTests;
             this.maxListSize = maxListSize > 3 ? maxListSize : 3;
             rand = new Random(randomSeed);
+            randomList = new RandomListGenerator(1, 2, 0);
         }
 
         public TestBulbs()
@@ -79,6 +82,7 @@ namespace TechInterview.Practice.Demos.BulbsDemo
             numberOfTests = 10;
             maxListSize = 15;
             rand = new Random(randomSeed);
+            randomList = new RandomListGenerator(1, 2, 0);
         }
         
     }
