@@ -1,7 +1,7 @@
 ﻿Pretend we have a series of N lights on the wall, each with their own switch.
 When you turn on the switch for one of the lights, it flips the 
 switch for all lights to the right of the one you flipped. Meaning, any lights that were
-on previously are now off, and any lights that were off previously are now on.
+previously on are now off, and any lights that were previously off are now on.
 
 Your goal is to write a function to determine how many times you need to flip a switch in order to 
 turn on all of the lights, and return that value.
@@ -24,33 +24,20 @@ turn on all of the lights, and return that value.
         Result: 4 Presses
 
 
-Insert the following function signature in the class Program in Program.cs
+Your function to work in is already provided in the Main, named CountSwitches.
 
-public static int CountSwitches(List<int> argument)
-{
-    return 0;
-}
-
-You may not modify the function signature including the return type or its parameters, but you are free to make any changes
-to the body of the funciton. 
+You may not modify the function signature including the return type or its parameters, but you are free to make 
+any changes to the body of the funciton. 
 
 TestBulbs has two constructors, a default and an overload. 
 
 The default will use the default parameters of a random seed of 1, 10 tests
 and a maximum number of bulbs of 15 per test.
 
-The overload will, in order, take a random seed, number of tests, and maximum number of bulbs as arguments. 
+The overload will, in order, take a random seed, number of tests, and maximum number of bulbs as arguments.    
 
-You can use either function from the TestBulbs class, RunForPassed(), or RunWithDetails()
+Here are examples of each being called from the Main.
+The output from Run() will show you the test data, and the results of each test case.
 
-RunForPassed() will provide you with the expected result, actual result, and whether or not your implementation passed.
-True will represent passed, and false will represent a failure for any given test case.
-
-RunWithDetails() will provide you the arrays used in testing, as well as your actual result for each test case.   
-
-Here are examples of each being called from the Main Method:
-
-new Demos.BulbsDemo.TestBulbs().RunForPassed();
-new Demos.BulbsDemo.TestBulbs().RunWithDetails();
-new Demos.BulbsDemo.TestBulbs(15, 5, 5).RunForPassed();
-new Demos.BulbsDemo.TestBulbs(15, 5, 5).RunWithDetails();
+new TestBulbs().Run();
+new TestBulbs(1, 15, 20).Run();
