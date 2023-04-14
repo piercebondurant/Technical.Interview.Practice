@@ -22,7 +22,7 @@ namespace TechInterview.Practice.Demos.Tools
             this.offset = offset;
             rand = new Random(this.seed);
         }
-        
+
         public List<int> GenerateList()
         {
             List<int> ret = new List<int>();
@@ -36,7 +36,7 @@ namespace TechInterview.Practice.Demos.Tools
         public List<int> GenerateList(int size)
         {
             List<int> ret = new List<int>();
-            for(int i = 0; i < size; i++)
+            for (int i = 0; i < size; i++)
             {
                 ret.Add(rand.Next(range) - offset);
             }

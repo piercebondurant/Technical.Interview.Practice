@@ -48,7 +48,7 @@ namespace TechInterview.Practice.Demos.BulbsDemo
                 int expected = CountSwitchesSolution(bulbs[i]);
                 int actual = Program.CountSwitches(bulbs[i]);
                 bool passed = expected == actual;
-                Console.WriteLine($"Test{i+1}:\t\t{expected}\t|\t{actual}\t|\t{passed}");
+                Console.WriteLine($"Test{i + 1}:\t\t{expected}\t|\t{actual}\t|\t{passed}");
             }
             Console.WriteLine();
         }
@@ -87,7 +87,7 @@ namespace TechInterview.Practice.Demos.BulbsDemo
             return count;
         }
 
-        
-        
+
+
     }
 }
