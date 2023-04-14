@@ -6,7 +6,7 @@ namespace TechInterview.Practice.Demos.Tools
 {
     class RandomListGenerator
     {
-        private int seed, range, offset;
+        private int seed, size, range, offset;
         private Random rand;
         public RandomListGenerator()
         {
@@ -22,11 +22,11 @@ namespace TechInterview.Practice.Demos.Tools
             this.offset = offset;
             rand = new Random(this.seed);
         }
-        
+
         public List<int> GenerateList()
         {
             List<int> ret = new List<int>();
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < size; i++)
             {
                 ret.Add(rand.Next(range) - offset);
             }
@@ -36,7 +36,7 @@ namespace TechInterview.Practice.Demos.Tools
         public List<int> GenerateList(int size)
         {
             List<int> ret = new List<int>();
-            for(int i = 0; i < size; i++)
+            for (int i = 0; i < size; i++)
             {
                 ret.Add(rand.Next(range) - offset);
             }
