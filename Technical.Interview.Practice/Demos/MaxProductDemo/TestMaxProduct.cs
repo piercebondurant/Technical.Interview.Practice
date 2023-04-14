@@ -29,7 +29,12 @@ namespace TechInterview.Practice.Demos.MaxProductDemo
             rand = new RandomListGenerator(this.seed, this.range, this.offset);
         }
 
-        public void RunWithDetails()
+        public void Run()
+        {
+            RunWithDetails();
+            RunForPassed();
+        }
+        private void RunWithDetails()
         {
             maxProductList = new List<List<int>>();
             for (int i = 0; i < numOfTests; i++)
@@ -43,24 +48,25 @@ namespace TechInterview.Practice.Demos.MaxProductDemo
                 Console.WriteLine($"{maxProductList[i][maxProductList[i].Count - 1]}]");
             }
             Console.WriteLine();
-            
+            /*
             for(int i = 0; i < numOfTests; i++)
             {
                 Console.WriteLine($"Test{i+1}: {Program.MaxProductOfThree(maxProductList[i])}");
             }
+            */
         }
 
-        public void RunForPassed()
+        private void RunForPassed()
         {
             maxProductList = new List<List<int>>();
-            Console.WriteLine($"    Expected\t|    Actual\t|    Result\n----------------|---------------|----------------");
+            Console.WriteLine($"\t    Expected\t|    Actual\t|    Result\n\t----------------|---------------|----------------");
             for (int i = 0; i < numOfTests; i++)
             {
                 maxProductList.Add(rand.GenerateList(listSize));
                 int expected = MPTSolution(maxProductList[i]);
                 int actual = Program.MaxProductOfThree(maxProductList[i]);
                 bool passed = expected == actual;
-                Console.WriteLine($"\t{expected}\t|\t{actual}\t|\t{passed}");
+                Console.WriteLine($"Test{i+1}:\t\t{expected}\t|\t{actual}\t|\t{passed}");
             }
         }
         private int MPTSolution(List<int> argument)
@@ -71,6 +77,8 @@ namespace TechInterview.Practice.Demos.MaxProductDemo
             int negativeMax = argument[size - 1] * argument[0] * argument[1];
             return Math.Max(positiveMax, negativeMax);
         }
+
+        
 
     }
 }

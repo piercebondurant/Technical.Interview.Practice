@@ -17,8 +17,10 @@ namespace TechInterview.Practice
 
         static void Main(string[] args)
         {
-
-
+            //new TestMaxProduct().Run();
+            //new TestBulbs().Run();
+            //new TestMaxProduct(1, 5, 20, 5).Run();
+            new TestBulbs(1, 15, 15).Run();
         }
     }
 }
