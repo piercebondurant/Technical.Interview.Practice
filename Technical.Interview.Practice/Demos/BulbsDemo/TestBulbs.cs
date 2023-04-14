@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using TechInterview.Practice.Demos.Tools;
 
 namespace TechInterview.Practice.Demos.BulbsDemo
 {
@@ -36,7 +35,7 @@ namespace TechInterview.Practice.Demos.BulbsDemo
             /*
             for (int j = 0; j < numberOfTests; j++)
             {
-                
+                bulbs.Add(new List<int>());
                 int length = rand.Next(maxListSize);
                 for (int i = 0; i < length; i++)
                 {
@@ -49,7 +48,7 @@ namespace TechInterview.Practice.Demos.BulbsDemo
                 int expected = CountSwitchesSolution(bulbs[i]);
                 int actual = Program.CountSwitches(bulbs[i]);
                 bool passed = expected == actual;
-                Console.WriteLine($"Test{i+1}:\t\t{expected}\t|\t{actual}\t|\t{passed}");
+                Console.WriteLine($"Test{i + 1}:\t\t{expected}\t|\t{actual}\t|\t{passed}");
             }
             Console.WriteLine();
         }
@@ -58,12 +57,11 @@ namespace TechInterview.Practice.Demos.BulbsDemo
             for (int j = 0; j < numberOfTests; j++)
             {
                 Console.Write($"Test{j + 1}: [");
+                bulbs.Add(new List<int>());
                 int length = rand.Next(maxListSize);
-                length = length > 0 ? length : length + 3;
-                bulbs.Add(randomList.GenerateList(length));
                 for (int i = 0; i < length; i++)
                 {
-                    //bulbs[j].Add(rand.Next(2));
+                    bulbs[j].Add(rand.Next(2));
                     Console.Write(bulbs[j][i] + ", ");
                 }
                 Console.WriteLine(bulbs[j][bulbs[j].Count - 1] + "]");
@@ -89,7 +87,7 @@ namespace TechInterview.Practice.Demos.BulbsDemo
             return count;
         }
 
-        
-        
+
+
     }
 }
