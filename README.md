@@ -13,8 +13,7 @@ The main should be constructed using the instructions for each problem and the T
 ---
 The Testing class has two constructors, a default and an overload that will allow for some customization of the test cases. Parameters for the constructors will vary from problem to problem, but instructions will be provided for each problem.   
 
-Testing your function will be done by using two functions in the Testing classes, RunForPassed and RunWithDetails.
+Testing your function will be done by using the Run function in each class. 
 
-RunForPassed will show expected results, actual results and display passed or failed.
-RunWithDetails will display the testing data, and your result for each test case.
+
 
