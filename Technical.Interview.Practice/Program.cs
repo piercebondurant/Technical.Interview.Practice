@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using TechInterview.Practice.Demos;
+using TechInterview.Practice.Demos.MaxProductDemo;
+using TechInterview.Practice.Demos.BulbsDemo;
 namespace TechInterview.Practice
 {
     class Program
@@ -13,9 +14,11 @@ namespace TechInterview.Practice
         {
             return 0;
         }
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
+
         }
     }
 }

@@ -1,41 +1,20 @@
 # Technical Interview Practice.
 ---
-Designed as a live coding problem.
+Designed as a live coding problem repository for technical interview practice questions.
 
+The only files that should be opened to best simulate the practice are the instructions for each problem found in the Instructions project, and the Main Method.
 
-### Problem Description
----
-Pretend we have a series of N lights on the wall, each with their own switch.
-When you turn on the switch for one of the lights, it flips the 
-switch for all lights to the right of the one you flipped. Meaning, any lights that were
-on previously are now off, and any lights that were off previously are now on.
+No function signatures should be changed. No function signatures should be deleted. 
 
-Your goal is to write a function to determine how many times you need to flip a switch in order to 
-turn on all of the lights, and return that value.
-```
-Example 1:           Example 2:
-[0, 1, 0, 1]         [0, 0, 1, 1]        
+The main should be constructed using the instructions for each problem and the Testing Class Usage section. 
 
-Hit Switch 0:        Hit Switch 0:        
-[1, 0, 1, 0]         [1, 1, 0, 0]        
-
-Hit Switch 1:        Hit Switch 2:        
-[1, 1, 0, 1]         [1, 1, 1, 1]        
-
-Hit Switch 2:        Result: 2 Presses        
-[1, 1, 1, 0]                
-
-Hit Switch 3:
-[1, 1, 1, 1]
-
-Result: 4 Presses
-```
 
 ### Testing Class Usage
 ---
-The Testing class has two constructors, a default and an overload that takes a randomness seed, and the number of tests, and the maximum number of switches. 
-It has two functions, RunForPassed and RunWithDetails.
+The Testing class has two constructors, a default and an overload that will allow for some customization of the test cases. Parameters for the constructors will vary from problem to problem, but instructions will be provided for each problem.   
+
+Testing your function will be done by using two functions in the Testing classes, RunForPassed and RunWithDetails.
 
 RunForPassed will show expected results, actual results and display passed or failed.
-RunWithDetails will display the actual switches themselves, and your result for each test case.
+RunWithDetails will display the testing data, and your result for each test case.
 

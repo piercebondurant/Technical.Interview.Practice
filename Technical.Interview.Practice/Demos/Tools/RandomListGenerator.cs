@@ -2,20 +2,20 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TechInterview.Practice.Demos.MaxProductDemo
+namespace TechInterview.Practice.Demos.Tools
 {
-    class RandomMaxProductList
+    class RandomListGenerator
     {
         private int seed, size, range, offset;
         private Random rand;
-        public RandomMaxProductList()
+        public RandomListGenerator()
         {
             seed = 1;
             range = 41;
             offset = -20;
             rand = new Random(seed);
         }
-        public RandomMaxProductList(int seed, int range, int offset)
+        public RandomListGenerator(int seed, int range, int offset)
         {
             this.seed = seed;
             this.range = range;
