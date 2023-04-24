@@ -9,7 +9,9 @@ namespace TechInterview.Practice.Demos.MaxProductDemo
     {
         int seed, range, listSize, offset, numOfTests;
         List<List<int>> maxProductList;
+        List<int> resultSet, expectedSet;
         RandomListGenerator rand;
+        OutputGenerator outG;
         public TestMaxProduct()
         {
             seed = 1;
@@ -18,6 +20,9 @@ namespace TechInterview.Practice.Demos.MaxProductDemo
             offset = 20;
             numOfTests = 10;
             rand = new RandomListGenerator(seed, range, offset);
+            maxProductList = new List<List<int>>();
+            resultSet = new List<int>();
+            expectedSet = new List<int>();
         }
         public TestMaxProduct(int seed, int listSize, int range, int numOfTests)
         {
@@ -27,20 +32,24 @@ namespace TechInterview.Practice.Demos.MaxProductDemo
             this.offset = this.range / 2;
             this.numOfTests = numOfTests;
             rand = new RandomListGenerator(this.seed, this.range, this.offset);
+            maxProductList = new List<List<int>>();
+            resultSet = new List<int>();
+            expectedSet = new List<int>();
         }
 
         public void Run()
         {
-            RunWithDetails();
-            RunForPassed();
+            PopulateResults();
+            outG = new OutputGenerator(resultSet, expectedSet);
+            outG.Print();
+            PrintTestData();
+            
         }
-        private void RunWithDetails()
+        private void PrintTestData()
         {
-            maxProductList = new List<List<int>>();
             for (int i = 0; i < numOfTests; i++)
             {
-                Console.Write($"Test{i+1}: [");
-                maxProductList.Add(rand.GenerateList(listSize));
+                Console.Write($"Test{i + 1}: [");
                 for(int j = 0; j < maxProductList[i].Count-1; j++)
                 {
                     Console.Write($"{maxProductList[i][j]}, ");
@@ -48,26 +57,20 @@ namespace TechInterview.Practice.Demos.MaxProductDemo
                 Console.WriteLine($"{maxProductList[i][maxProductList[i].Count - 1]}]");
             }
             Console.WriteLine();
-            /*
-            for(int i = 0; i < numOfTests; i++)
-            {
-                Console.WriteLine($"Test{i+1}: {Program.MaxProductOfThree(maxProductList[i])}");
-            }
-            */
         }
 
-        private void RunForPassed()
+        private void PopulateResults()
         {
-            maxProductList = new List<List<int>>();
-            Console.WriteLine($"\t    Expected\t|    Actual\t|    Result\n\t----------------|---------------|----------------");
+            resultSet = new List<int>();
+            expectedSet = new List<int>();
             for (int i = 0; i < numOfTests; i++)
             {
                 maxProductList.Add(rand.GenerateList(listSize));
                 int expected = MPTSolution(maxProductList[i]);
                 int actual = Program.MaxProductOfThree(maxProductList[i]);
-                bool passed = expected == actual;
-                Console.WriteLine($"Test{i+1}:\t\t{expected}\t|\t{actual}\t|\t{passed}");
-            }
+                resultSet.Add(actual);
+                expectedSet.Add(expected);
+            } 
         }
         private int MPTSolution(List<int> argument)
         {
